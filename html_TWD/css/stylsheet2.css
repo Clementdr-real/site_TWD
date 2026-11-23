@@ -1,0 +1,75 @@
+body {
+  background-color: #121212;
+  /* Optionnel : ajouter une texture subtile par-dessus */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('chemin/vers/texture-grunge.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bandeau {
+background-color: #1e293b;
+padding: 10px 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 225px; /* Espace entre les rectangles */
+}
+.bandeau a {
+color: #ffffff;
+text-decoration: none;
+font-family: system-ui, sans-serif;
+font-size: 1rem;
+padding: 10px 18px; /* Définit la taille du rectangle autour du texte */
+border-radius: 6px; /* arrondit légèrement les coins */
+transition: background-color 0.2s ease;
+}
+/* Le fond gris s'applique uniquement au lien survolé */
+.bandeau a:hover {
+background-color: #64748b;
+}
+
+
+a {
+    color: #EDE8D0;
+    text-decoration: none; /* Supprime le soulignement si besoin */
+}
+
+a:visited {
+    color: #850606; 
+    text-decoration: none; /* Supprime le soulignement si besoin */ 
+}
+
+
+
+@font-face {
+  font-family: "rubik-dirt";
+  src: url("./font/rubik-dirt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+h1{
+    font-family: "rubik-dirt", Impact, sans-serif;
+    /*color : #c5c2b9;*/
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #d8d3c4;               /* blanc cassé */
+    text-shadow: 0 0 2px #000;  /* ombre rougeâtre sombre */
+    text-align: center;
+}
+
+.conteneur3 {
+  display: flex;
+  align-items: center; /* Aligne verticalement le texte au centre de l'image */
+  gap: 20px; /* Espace entre l'image et le texte */
+  color: #EDE8D0;
+}
+
+.conteneur3 img {
+  width: 250px; /* Ajustez la taille de l'image selon vos besoins */
+  height: auto;
+}
+
+footer{
+    margin : 6px;
+    text-align: end;
+}
