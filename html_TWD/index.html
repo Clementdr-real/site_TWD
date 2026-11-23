@@ -3,26 +3,33 @@
     <head>
         <title>Accueil</title>
         <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="img/logo.png" size="150x50">
+        <link rel="stylesheet" href="css/index.css" media="all">
     </head>
     <body>
-        <a href="index.html" title="Explication du lien">Accueil</a> 
-        <a href="personnages.html">Personnages</a> 
-        <a href="résumé.html" title="Explication du lien">Résumé</a> 
-        <a href="récompenses.html" title="Explication du lien">Récompenses</a> 
-        <a href="source.html" title="Explication du lien">Sources</a> 
-        <a href="avis.html" title="Explication du lien">Avis</a>
+        <div class="bandeau">
+            <a href="index.html">Accueil</a> 
+            <a href="Personnages.html">Personnages</a> 
+            <a href="résumé.html" >Résumé</a> 
+            <a href="récompenses.html">Récompenses</a> 
+            <a href="source.html">Sources</a> 
+            <a href="avis.html">Avis</a>
+        </div>
 
         <h1>Accueil</h1>
 
-        <img src="img/poster.jpg">
+        <section class="section">
 
-        <div class="explication">
+        
+        
+        <div class="gauche">
+        <article class="explication">
             <p>Sur cette site, vous trouverez des informations sur l'univers
             de la série télévisée the walking dead. Il y sera présenté les
             différents personnages principaux, ainsi qu'un résumé par saison,
             les récompenses qu'a pu avoir cette série. Egalement une page avec
             les sources utilisées, et une dernière pour que vous y laissiez votre avis</p>
-        </div>
+        </article>
 
         <div class="persos">
             <h3>Personnages</h3>
@@ -50,8 +57,15 @@
 
         </div>
         <audio controls="controls">
-            <source src="générique.mp3">
+            <source src="générique.mp3" class="audio">
         </audio>
+        </div>
+
+        <div class="conteneur-image">
+            <img src="img/poster.jpg" class="image">
+        </div>
+        
+        </section>
     <!-- Ici votre site Web -->
      
     </body>
