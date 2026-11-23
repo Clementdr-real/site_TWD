@@ -1,0 +1,125 @@
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, #2A3328 0%, #121412 85%);
+  color: #E0DDD5;
+}
+
+
+
+/* Barre de navigation noire en haut */
+.bandeau {
+    background-color: #1e293b;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 225px; 
+}
+.bandeau a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    padding: 10px 18px; 
+    border-radius: 6px; 
+    transition: background-color 0.2s ease;
+}
+
+.bandeau a:hover {
+    background-color: #64748b;
+}
+
+
+/* Mise en page principale en deux colonnes */
+.conteneur {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px; /* Espace entre la vidéo et le bloc gris */
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+/* Colonne de gauche (Titre + Vidéo) */
+.colonne-gauche {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le titre au-dessus de la vidéo */
+}
+
+.colonne-gauche h1 {
+    font-size: 56px;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+
+.colonne-droite h6 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+.colonne-droite h6:first-child {
+    margin-top: 0;
+}
+
+.colonne-droite p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.btn-haut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00008B;
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-haut:hover {
+  background-color: #ADD8E6;
+}
+
+/* Lien Wikipédia en bas du bloc gris */
+.lien-wiki {
+    display: inline-block;
+    margin-top: 25px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Adaptation mobile / petits écrans */
+@media (max-width: 900px) {
+    .conteneur {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .colonne-droite {
+        margin-top: 0;
+        max-height: none;
+    }
+}
