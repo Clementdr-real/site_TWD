@@ -41,14 +41,39 @@
 
 .section {
   display: flex;
-  justify-content: space-between; /* Espace le bloc de gauche et l'image de droite */
-  align-items: center;            /* Centre verticalement le texte par rapport à l'image */
-  gap: 40px;                      /* Espace minimum entre le texte et l'image */
-  padding: 40px;                  /* Marge autour pour que l'ombre respire */
+  justify-content: space-between;
+  align-items: flex-start; /* Aligne les éléments en haut au lieu de les centrer */
+  gap: 40px;
+  padding: 40px;
 }
 
-.gauche {
-  max-width: 1000px; /* Évite que les lignes de texte soient trop longues à lire */
+/* Supprime l'espace vide au-dessus du tout premier élément de la colonne */
+.gauche > *:first-child {
+  margin-top: 0;
 }
+
+@font-face {
+font-family: "rubik-dirt";
+src: url("./font/rubik-dirt.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+}
+h1{
+font-family: "rubik-dirt", Impact, sans-serif;
+/*color : #c5c2b9;*/
+letter-spacing: -2px;
+text-transform: uppercase;
+color: #6b070f; /* blanc cassé */
+text-shadow: 0 0 2px #000; /* ombre rougeâtre sombre */
+text-align: center;
+}
+
+.audio {
+  width: 100%;          /* Prend toute la largeur disponible (ou mettez ex: 350px) */
+  max-width: 450px;
+  border-radius: 30px;  /* Bords arrondis */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ombre portée */
+}
+
 
 

@@ -1,0 +1,115 @@
+/* ===========================================
+   avis.css - Page "Avis" (thème Walking Dead)
+   Tout est local : aucune ressource externe
+   =========================================== */
+
+   .bandeau {
+  background-color: #1e293b;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 225px; /* Espace entre les rectangles */
+}
+
+.bandeau a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  padding: 10px 18px; /* Définit la taille du rectangle autour du texte */
+  border-radius: 6px; /* arrondit légèrement les coins */
+  transition: background-color 0.2s ease;
+}
+
+/* Le fond gris s'applique uniquement au lien survolé */
+.bandeau a:hover {
+  background-color: #64748b;
+}
+
+
+/* Fond de la page */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Cadre du formulaire */
+#form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #2b2b2b;
+    border: 2px solid #b30000;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.4);
+}
+
+/* Libellés */
+label {
+    display: inline-block;
+    margin: 8px 5px;
+    font-weight: bold;
+}
+
+/* Champs texte et zone de commentaire */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #111;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Bordure rouge quand on clique dans un champ */
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b30000;
+}
+
+/* Boutons radio */
+input[type="radio"] {
+    accent-color: #b30000;
+}
+
+/* Bouton Envoyer */
+input[type="submit"] {
+    display: block;
+    margin: 15px auto 0;
+    padding: 10px 30px;
+    background-color: #b30000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #800000;
+}
+
+@font-face {
+font-family: "rubik-dirt";
+src: url("./font/rubik-dirt.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+}
+h1{
+font-family: "rubik-dirt", Impact, sans-serif;
+/*color : #c5c2b9;*/
+letter-spacing: -2px;
+text-transform: uppercase;
+color: #d8d3c4; /* blanc cassé */
+text-shadow: 0 0 2px #000; /* ombre rougeâtre sombre */
+color: #b30000;
+text-align: center;
+}
