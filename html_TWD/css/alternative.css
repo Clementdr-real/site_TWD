@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #141414;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #000000;
+    border-bottom: 2px solid #8b1e1e;
+    padding: 22px 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #e05252;
+}
+
+.conteneur {
+    display: flex;
+    flex-direction: column; /* Passe l'affichage en colonne */
+    align-items: center;    /* Centre les éléments horizontalement */
+    gap: 40px;              /* Espace entre la vidéo et le texte */
+    max-width: 900px;       /* Réduit légèrement la largeur max pour un meilleur rendu vertical */
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+.colonne-gauche {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colonne-gauche h1 {
+    font-size: 56px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    max-width: 720px; /* Un peu plus large pour profiter de l'espace */
+    background-color: #242424;
+    border: 1px solid #383838;
+    display: block;
+}
+
+.colonne-droite {
+    width: 100%;
+    max-width: 720px; /* Aligné sur la largeur de la vidéo */
+    background-color: #222222;
+    border: 1px solid #383838;
+    padding: 35px;
+    margin-top: 0;    /* Supprime le décalage vertical inutile */
+    max-height: none; /* Permet au texte de s'étendre sans barre de défilement interne */
+}
+
+.colonne-droite h6 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #e05252;
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+.colonne-droite h6:first-child {
+    margin-top: 0;
+}
+
+.colonne-droite p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #dcdcdc;
+}
+
+.lien-wiki {
+    display: inline-block;
+    margin-top: 25px;
+    color: #e05252;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn-theme {
+    padding: 8px 14px;
+    cursor: pointer;
+    border: 1px solid #e05252;
+    background: #8b1e1e;
+    color: #ffffff;
+    font-size: 13px;
+}
