@@ -1,0 +1,25 @@
+/*BANDEAU*/
+
+.bandeau {
+  background-color: #1e293b;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 225px; /* Espace entre les rectangles */
+}
+
+.bandeau a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  padding: 10px 18px; /* Définit la taille du rectangle autour du texte */
+  border-radius: 6px; /* arrondit légèrement les coins */
+  transition: background-color 0.2s ease;
+}
+
+/* Le fond gris s'applique uniquement au lien survolé */
+.bandeau a:hover {
+  background-color: #64748b;
+}

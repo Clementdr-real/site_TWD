@@ -68,12 +68,16 @@ text-shadow: 0 0 2px #000; /* ombre rougeâtre sombre */
 text-align: center;
 }
 
-.audio {
-  width: 100%;          /* Prend toute la largeur disponible (ou mettez ex: 350px) */
-  max-width: 450px;
-  border-radius: 30px;  /* Bords arrondis */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Ombre portée */
+.gauche {
+  flex: 1;
+  padding: 25px;
+  background: #1a1a1a;
+  color: #d8d3c4;
+  border-radius: 15px;
 }
+
+
+
 
 
 
