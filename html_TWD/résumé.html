@@ -38,6 +38,23 @@
                 <a href="avis.html">Avis</a>
             </div>
         </header>
+          <!-- button avec js pour le changement de feuille de style viens de : https://www.geeksforgeeks.org/javascript/how-to-switch-between-multiple-css-stylesheets-using-javascript/ -->
+            <button onclick="toggleTheme()">Switch</button>
+            <script>
+                function toggleTheme() {
+                    // Select the <link> element
+                    let theme = document.getElementById('theme');
+
+                    // Toggle between light.css and dark.css
+                    if (theme.getAttribute('href') == 'résumé.css') {
+                        theme.setAttribute('href', 'alternative.css');
+                    } else {
+                        theme.setAttribute('href', 'résumé.css');
+                    }
+                }
+            </script>
+
+        <link id="theme" rel="stylesheet" href="résumé.css">
 
         <main class="conteneur">
             <!-- Colonne de gauche : Titre + Vidéo -->
