@@ -39,3 +39,12 @@ h1{
     text-shadow: 0 0 2px #000;  /* ombre rougeâtre sombre */
     text-align: center;
 }
+
+
+body {
+  background-color: #121212;
+  /* Optionnel : ajouter une texture subtile par-dessus */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('chemin/vers/texture-grunge.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
