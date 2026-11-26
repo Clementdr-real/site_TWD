@@ -23,3 +23,19 @@
 .bandeau a:hover {
   background-color: #64748b;
 }
+
+@font-face {
+  font-family: "rubik-dirt";
+  src: url("./font/rubik-dirt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+h1{
+    font-family: "rubik-dirt", Impact, sans-serif;
+    /*color : #c5c2b9;*/
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #d8d3c4;               /* blanc cassé */
+    text-shadow: 0 0 2px #000;  /* ombre rougeâtre sombre */
+    text-align: center;
+}
