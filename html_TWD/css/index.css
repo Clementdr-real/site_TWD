@@ -62,15 +62,14 @@
   font-weight: normal;
   font-style: normal;
 }
-
-h1 {
-  font-family: "rubik-dirt", Impact, sans-serif;
-  /*color : #c5c2b9;*/
-  letter-spacing: -2px;
-  text-transform: uppercase;
-  color: #6b070f;
-  text-shadow: 0 0 2px #000;
-  text-align: center;
+h1{
+    font-family: "rubik-dirt", Impact, sans-serif;
+    /*color : #c5c2b9;*/
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #d8d3c4;               /* blanc cassé */
+    text-shadow: 0 0 2px #000;  /* ombre rougeâtre sombre */
+    text-align: center;
 }
 
 .gauche {
