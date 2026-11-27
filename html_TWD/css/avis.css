@@ -113,3 +113,93 @@ text-shadow: 0 0 2px #000; /* ombre rougeâtre sombre */
 color: #b30000;
 text-align: center;
 }
+
+
+
+/* ---------- TABLETTE (moins de 1024px) ---------- */
+@media (max-width: 1023px) {
+
+  /* L'écart de 225px est trop grand : on le réduit */
+  .bandeau {
+    gap: 40px;
+    flex-wrap: wrap; /* les liens passent à la ligne si besoin */
+  }
+
+  #form {
+    margin: 30px 20px; /* garde un espace sur les côtés */
+  }
+
+  /* Le formulaire reste centré tant qu'il y a la place */
+  @supports (margin: max(0px)) {
+    #form {
+      margin-left: max(20px, calc((100% - 500px) / 2));
+      margin-right: max(20px, calc((100% - 500px) / 2));
+    }
+  }
+}
+
+/* ---------- TÉLÉPHONE (moins de 768px) ---------- */
+@media (max-width: 767px) {
+
+  body {
+    margin: 0; /* évite un scroll horizontal parasite */
+  }
+
+  /* Bandeau : liens plus serrés, répartis sur la largeur */
+  .bandeau {
+    gap: 8px;
+    padding: 8px 10px;
+    justify-content: space-around;
+  }
+
+  .bandeau a {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Titre : taille qui s'adapte à l'écran */
+  h1 {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    letter-spacing: -1px;
+    padding: 0 10px;
+  }
+
+  /* Formulaire : prend presque toute la largeur */
+  #form {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+
+  /* Taille 16px minimum : empêche le zoom automatique sur iPhone */
+  input[type="text"],
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Bouton plus facile à toucher avec le doigt */
+  input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ---------- PETITS TÉLÉPHONES (moins de 400px) ---------- */
+@media (max-width: 399px) {
+
+  /* Liens du bandeau les uns sous les autres */
+  .bandeau {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bandeau a {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #form {
+    margin: 15px 8px;
+    padding: 14px;
+  }
+}
