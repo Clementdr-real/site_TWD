@@ -74,3 +74,58 @@ footer{
     text-align: end;
     color : red;
 }
+
+/* ---------- Tablette (moins de 1024px) ---------- */
+@media (max-width: 1023px) {
+  .bandeau {
+    gap: 60px;
+  }
+
+  .conteneur3 {
+    padding: 0 15px;
+  }
+
+  .conteneur3 img {
+    width: 200px;
+  }
+}
+
+/* ---------- Téléphone (moins de 768px) ---------- */
+@media (max-width: 767px) {
+  /* background-attachment: fixed fonctionne mal sur mobile */
+  body {
+    background-attachment: scroll;
+  }
+
+  .bandeau {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .bandeau a {
+    padding: 8px 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+  }
+
+  /* Image au-dessus, texte en dessous */
+  .conteneur3 {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .conteneur3 img {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
