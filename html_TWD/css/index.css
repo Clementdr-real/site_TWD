@@ -1,3 +1,7 @@
+/* =========================================================
+   STYLE D'ORIGINE (PC) : rien n'a été modifié ici
+   ========================================================= */
+
 /*BANDEAU*/
 
 .bandeau {
@@ -53,19 +57,20 @@
 }
 
 @font-face {
-font-family: "rubik-dirt";
-src: url("./font/rubik-dirt.ttf") format("truetype");
-font-weight: normal;
-font-style: normal;
+  font-family: "rubik-dirt";
+  src: url("./font/rubik-dirt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-h1{
-font-family: "rubik-dirt", Impact, sans-serif;
-/*color : #c5c2b9;*/
-letter-spacing: -2px;
-text-transform: uppercase;
-color: #6b070f; /* blanc cassé */
-text-shadow: 0 0 2px #000; /* ombre rougeâtre sombre */
-text-align: center;
+
+h1 {
+  font-family: "rubik-dirt", Impact, sans-serif;
+  /*color : #c5c2b9;*/
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: #6b070f;
+  text-shadow: 0 0 2px #000;
+  text-align: center;
 }
 
 .gauche {
@@ -83,4 +88,108 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('chemin/vers/texture-grunge.png');
   background-size: cover;
   background-attachment: fixed;
+}
+
+
+/* =========================================================
+   ADAPTATIONS RESPONSIVE
+   Ces règles ne s'activent que sur les écrans plus petits.
+   Sur un PC classique, la page reste exactement identique.
+   ========================================================= */
+
+
+/* ---------- Petits PC / grands écrans de tablette (≤ 1200px) ---------- */
+@media (max-width: 1200px) {
+  /* L'écart de 225px devient proportionnel à la largeur de l'écran */
+  .bandeau {
+    gap: 5vw;
+  }
+
+  /* L'image peut rétrécir si elle manque de place */
+  .conteneur-image {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+  }
+}
+
+
+/* ---------- Tablette (≤ 1024px) ---------- */
+@media (max-width: 1024px) {
+  .bandeau {
+    gap: 20px;
+    flex-wrap: wrap; /* les liens passent à la ligne si besoin */
+  }
+
+  .section {
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .gauche {
+    padding: 20px;
+  }
+}
+
+
+/* ---------- Petite tablette / grand téléphone (≤ 900px) ---------- */
+@media (max-width: 900px) {
+  /* Texte et image passent l'un sous l'autre */
+  .section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .conteneur-image {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .image {
+    margin: 0 auto;
+  }
+}
+
+
+/* ---------- Téléphone (≤ 600px) ---------- */
+@media (max-width: 600px) {
+  .bandeau {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .bandeau a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .section {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .gauche {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+    letter-spacing: -1px;
+    overflow-wrap: break-word; /* évite qu'un long mot dépasse de l'écran */
+  }
+
+  .image {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px 1px rgba(0, 0, 0, 0.8);
+  }
+
+  /* "fixed" fonctionne mal sur mobile (surtout iPhone) */
+  body {
+    background-attachment: scroll;
+  }
 }
