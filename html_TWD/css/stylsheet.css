@@ -1,8 +1,27 @@
 /* ==========================================================
    STYLE.CSS - Page "personnages"
-   Garde vos classes : body, .bandeau, h1, a, .conteneur1, .conteneur2, footer
-   Ajoutez la classe .grille autour de vos cartes pour la mise en page en 2 colonnes
+   Version corrigée : fonctionne AVEC ou SANS <main> / .grille
    ========================================================== */
+
+/* ---------- Base (évite les débordements) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden; /* empêche le dézoom automatique sur téléphone */
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
 
 /* ---------- Page ---------- */
 body {
@@ -41,11 +60,11 @@ body {
 /* ---------- Panneau clair principal ---------- */
 main,
 .panneau {
+  display: block;
   background-color: #f1f1f1;
   max-width: 1100px;
   margin: 30px auto;
   padding: 30px 40px 20px;
-  box-sizing: border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -59,13 +78,19 @@ h1 {
   letter-spacing: 0;
   text-align: center;
   margin: 0 0 30px;
+  overflow-wrap: break-word;
 }
 
+/* ---------- Liens dans le contenu ---------- */
+a {
+  color: #222;
+  text-decoration: none;
+}
 
 /* ---------- Grille des cartes (2 colonnes) ---------- */
 .grille {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* minmax(0,...) évite les débordements */
   gap: 16px 20px;
   align-items: start;
 }
@@ -80,16 +105,38 @@ h1 {
   background-color: #dcdcdc;
   color: #222;
   border-radius: 4px;
+  max-width: 100%;
+}
+
+/* Si les cartes ne sont PAS dans une .grille : on les espace quand même */
+.conteneur1 + .conteneur1,
+.conteneur1 + .conteneur2,
+.conteneur2 + .conteneur1,
+.conteneur2 + .conteneur2 {
+  margin-top: 16px;
+}
+
+/* Dans la grille, c'est le gap qui gère l'espace */
+.grille > .conteneur1,
+.grille > .conteneur2 {
+  margin-top: 0;
 }
 
 .conteneur2 {
   flex-direction: row-reverse;
 }
 
+/* Le texte peut rétrécir et passer à la ligne */
+.conteneur1 > *,
+.conteneur2 > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
 .conteneur1 img,
 .conteneur2 img {
-  width: 90px;
-  height: auto;
+  width: 90px !important; /* prend le dessus sur un width="..." dans le HTML */
+  height: auto !important;
   flex-shrink: 0;
   background-color: #b5b5b5;
   border-radius: 2px;
@@ -101,6 +148,8 @@ footer {
   padding: 20px 15px;
   color: #f1f1f1;
   font-size: 0.9rem;
+  width: auto !important;
+  max-width: 100%;
 }
 
 /* ==========================================================
@@ -124,7 +173,7 @@ footer {
 
   .conteneur1 img,
   .conteneur2 img {
-    width: 75px;
+    width: 75px !important;
   }
 }
 
@@ -132,10 +181,6 @@ footer {
    TELEPHONE (moins de 768px)
    ========================================================== */
 @media (max-width: 767px) {
-  body {
-    background-attachment: scroll;
-  }
-
   .bandeau {
     flex-direction: column;
     gap: 8px;
@@ -143,11 +188,9 @@ footer {
   }
 
   .bandeau a {
-    font-size: 0.95rem;
     padding: 10px 14px;
     width: 100%;
     text-align: center;
-    box-sizing: border-box;
   }
 
   main,
@@ -158,7 +201,6 @@ footer {
 
   h1 {
     font-size: clamp(1.5rem, 8vw, 2rem);
-    overflow-wrap: break-word;
     margin-bottom: 20px;
   }
 
@@ -167,6 +209,7 @@ footer {
     gap: 12px;
   }
 
+  /* Cartes : image au-dessus, texte en dessous */
   .conteneur1,
   .conteneur2 {
     flex-direction: column;
@@ -175,13 +218,16 @@ footer {
     padding: 12px;
   }
 
-  .conteneur2 {
-    flex-direction: column;
+  /* Si les cartes sont directement dans le body (sans <main>) */
+  body > .conteneur1,
+  body > .conteneur2 {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .conteneur1 img,
   .conteneur2 img {
-    width: 120px;
+    width: 120px !important;
   }
 
   footer {
