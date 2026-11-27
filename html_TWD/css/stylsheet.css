@@ -61,11 +61,6 @@ h1 {
   margin: 0 0 30px;
 }
 
-/* ---------- Liens dans le contenu ---------- */
-a {
-  color: #222;
-  text-decoration: none;
-}
 
 /* ---------- Grille des cartes (2 colonnes) ---------- */
 .grille {
