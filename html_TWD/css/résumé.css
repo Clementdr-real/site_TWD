@@ -137,4 +137,106 @@ h1{
         margin-top: 0;
         max-height: none;
     }
+    
+}
+
+/* ---------- Tablette (jusqu'à 1024px) ---------- */
+@media (max-width: 1024px) {
+    html,
+    body {
+ overflow-x: hidden; /* empêche la page de "s'élargir" et de forcer le dézoom */
+    }
+
+    .bandeau {
+        gap: 60px; /* 225px est beaucoup trop large pour une tablette */
+    }
+
+    .conteneur {
+ gap: 40px;
+ padding: 0 25px;
+    }
+
+    /* Les colonnes flex peuvent rétrécir sous la taille de leur contenu */
+    .colonne-gauche,
+    .colonne-droite {
+        min-width: 0;
+    }
+
+    /* Les médias ne dépassent jamais de l'écran */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+    .colonne-gauche h1 {
+        font-size: 46px;
+ margin-bottom: 35px;
+    }
+}
+
+/* ---------- Petits écrans (jusqu'à 900px) ---------- */
+@media (max-width: 900px) {
+    /* Les deux colonnes prennent toute la largeur une fois empilées */
+    .colonne-gauche,
+    .colonne-droite {
+        width: 100%;
+    }
+
+    /* La vidéo s'adapte à la largeur en gardant ses proportions */
+    .colonne-gauche video {
+ width: 100%;
+ height: auto;
+    }
+
+    .colonne-gauche iframe {
+ width: 100%;
+ height: auto;
+        aspect-ratio: 16 / 9; /* format d'une vidéo YouTube */
+    }
+}
+
+/* ---------- Téléphone (jusqu'à 600px) ---------- */
+@media (max-width: 600px) {
+    .bandeau {
+        flex-wrap: wrap;   /* les liens passent à la ligne si besoin */
+ gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .bandeau a {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+
+    .conteneur {
+        margin: 25px auto;
+        padding: 0 15px;
+        gap: 30px;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+        overflow-wrap: break-word; /* les longs mots ne débordent plus */
+    }
+
+    .colonne-gauche h1 {
+ font-size: clamp(30px, 10vw, 40px);
+        margin-bottom: 25px;
+    }
+
+    .colonne-droite h6 {
+        font-size: 17px;
+    }
+
+    .colonne-droite p {
+        font-size: 16px; /* plus lisible sur téléphone */
+    }
+
+    .btn-haut {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 14px;
+ font-size: 0.9rem;
+    }
 }
