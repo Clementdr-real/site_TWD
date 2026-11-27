@@ -58,13 +58,12 @@ a {
     color: #EDE8D0;
     text-decoration: none; /* Supprime le soulignement si besoin */
 }
-
+/* j'ai enlever la coloration rouge quand le lien est visité
 a:visited {
     color: #850606; 
     text-decoration: none; /* Supprime le soulignement si besoin */ 
 }
-
-
+*/
 
 .conteneur1 {
   display: flex;
