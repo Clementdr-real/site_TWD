@@ -94,3 +94,54 @@ footer{
   text-align: center;
   width: 1900px;
 }
+
+/* ---------- TABLETTE (moins de 1024px) ---------- */
+@media (max-width: 1023px) {
+  .bandeau {
+    gap: 60px; /* 225px est trop large pour une tablette */
+  }
+}
+
+/* ---------- TÉLÉPHONE (moins de 768px) ---------- */
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll; /* "fixed" bug sur iPhone/Android */
+  }
+
+  /* Bandeau : les liens passent à la ligne si besoin */
+  .bandeau {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .bandeau a {
+    font-size: 0.95rem;
+    padding: 10px 14px; /* reste assez grand pour le doigt */
+  }
+
+  /* Titre plus petit pour ne pas déborder */
+  h1 {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    letter-spacing: -1px;
+    overflow-wrap: break-word;
+  }
+
+  /* Image et texte l'un sous l'autre au lieu de côte à côte */
+  .conteneur1,
+  .conteneur2 {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .conteneur1 img,
+  .conteneur2 img {
+    width: 120px;
+  }
+
+  footer {
+    padding: 0 15px;
+  }
+}
